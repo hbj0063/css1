@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습 - 구조선택자</title>
+    <style>
+        h2+ul{list-style: square;} 
+        ul+ul{list-style: circle;}
+        h2~ul{border:3px solid gold; background-color: wheat; }
+        .con li {text-decoration:underline;}
+        .con > ul > li {border-bottom:2px solid red};
+        /* 순서 위치 선택자 */
+        li:first-child {color:silver;} /*첫 번째 */
+        li:last-child {color:yellow;} /* 마지막 요소 */
+        li:nth-child(2) {color:purple;} /* 2번째 요소 */
+        li:only-child {color:black;} /* 독자 */
+        li:nth-child(2n) {color:blue;} /* 짝수 번째 */
+        li:nth-child(2n+1) {color:pink; background-color: red;} /* 홀수 번째 */
+
+        li:first-of-type {padding: left 120px;;} /*순서가 중요함*/
+        /* lsat-of-type, nth-of-type, only-of-type 등 도 있음 */
+        p:empty::before, div:empty::before {
+            content:"자식 또는 내용이 없는 요소"
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h2>div 요소 안의 목록 요소</h2>
+        <ul class="lis1">
+            <a href="">링크</a>
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul>
+        <ul class="lis2">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul>
+    <article>
+        <h2>article 요소 안의 목록</h2>
+        <ol>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ol>
+    </article>
+    <div class="con" title="자식이 없는 요소"></div>
+    <div class="con">여기는 내용</div>
+        <p title="내용이 없는 요소"></p>
+    </div>
+</body>
+</html>
